@@ -26,13 +26,14 @@ public class StandaloneGameExecutor {
 		
 		String jsonFilePath = "/request.json";
 		ConfigLoader loader = new FileConfigLoader(jsonFilePath, new JsonParser());
-		GameRequest resuest = loader.getRequest();
+		GameRequest request = loader.getRequest();
 		
 //		LadderAlgorithm ladderAlgorithm = new BrianSelector();
 //		GhostLegService ghostLegService = new GhostLegServiceImpl(ladderAlgorithm);
 		
-		GhostLegService ghostLegService = new GhostLegServiceImpl(new BrianSelector());
-		List<String> winners = ghostLegService.bet(resuest);
+//		GhostLegService ghostLegService = new GhostLegServiceImpl(new BrianSelector());
+		GhostLegService ghostLegService = new GhostLegServiceImpl();
+		List<String> winners = ghostLegService.bet(request);
 		
 		for(String name : winners) {
 			log.info("congratulation : " + name);
