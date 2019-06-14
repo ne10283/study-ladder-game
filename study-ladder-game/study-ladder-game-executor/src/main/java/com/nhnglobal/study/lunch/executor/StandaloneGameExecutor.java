@@ -25,7 +25,7 @@ public class StandaloneGameExecutor {
 		ConfigLoader loader = new FileConfigLoader(jsonFilePath, new JsonParser());
 		GameRequest request = loader.getRequest();
 		
-		GhostLegServiceFactory factory = new GhostLegServiceFactory(); 
+		GhostLegServiceFactory factory = GhostLegServiceFactory.getFactory(); 
 		GhostLegService ghostLegService = factory.getService("default");
 		List<String> winners = ghostLegService.bet(request);
 		
