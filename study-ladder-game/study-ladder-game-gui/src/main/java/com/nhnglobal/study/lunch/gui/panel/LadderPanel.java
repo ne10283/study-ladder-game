@@ -41,7 +41,7 @@ public class LadderPanel extends JPanel {
 		
 		if (mark != null) {
 			g.setColor(Color.red);
-			g.drawOval(mark[0] - 5, mark[1] - 5, 10, 10);
+			g.fillOval(mark[0] - 5, mark[1] - 5, 10, 10);
 		}
 	}
 	
