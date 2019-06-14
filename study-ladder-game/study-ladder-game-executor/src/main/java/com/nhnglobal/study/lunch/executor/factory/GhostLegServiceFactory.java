@@ -6,14 +6,20 @@ import com.nhnglobal.study.lunch.core.algorithm.selector.*;
 
 public class GhostLegServiceFactory {
 	public GhostLegService getService(String selector) {
-		if (selector.equals("brian")) {
-			return new GhostLegServiceImpl(new BrianSelector());
+		try {
+			if (selector.equals("brian")) {
+				return new GhostLegServiceImpl(new BrianSelector());
+			}
+			else if (selector.equals("default")) {
+				return new GhostLegServiceImpl(new DefaultSelector());
+			}
+			else {
+				return new GhostLegServiceImpl(new DefaultSelector());
+			}
 		}
-		else if (selector.equals("default")) {
+		catch(Exception e) {
 			return new GhostLegServiceImpl(new DefaultSelector());
 		}
-		else {
-			return new GhostLegServiceImpl(new DefaultSelector());
-		}
+		
 	}
 }

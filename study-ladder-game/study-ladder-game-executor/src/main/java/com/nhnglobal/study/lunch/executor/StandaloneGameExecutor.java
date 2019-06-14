@@ -9,9 +9,9 @@ import com.nhnglobal.study.lunch.core.GhostLegService;
 import com.nhnglobal.study.lunch.core.config.ConfigLoader;
 import com.nhnglobal.study.lunch.core.config.loader.FileConfigLoader;
 import com.nhnglobal.study.lunch.core.config.parser.JsonParser;
-import com.nhnglobal.study.lunch.core.impl.GhostLegServiceImpl;
 import com.nhnglobal.study.lunch.core.model.GameRequest;
 import com.nhnglobal.study.lunch.executor.factory.GhostLegServiceFactory;
+import com.nhnglobal.study.lunch.gui.LadderGameGui;
 
 public class StandaloneGameExecutor {
 	
@@ -32,6 +32,11 @@ public class StandaloneGameExecutor {
 		for(String name : winners) {
 			log.info("congratulation : " + name);
 		}
+		
+		LadderGameGui gui = new LadderGameGui();
+		gui.createFrame();
+		gui.addParticipants(request.getParticipants());
+		gui.startFrame();
 	}
 
 }
