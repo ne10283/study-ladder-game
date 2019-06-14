@@ -9,6 +9,6 @@
   <groupId>com.nhnglobal.study.lunch.gui</groupId>
   <artifactId>study-ladder-game-gui</artifactId>
   
-  <name>core</name>
+  <name>gui</name>
   
 </project>
