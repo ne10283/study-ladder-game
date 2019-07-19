@@ -17,6 +17,7 @@
 	<modules>
 		<module>study-ladder-game-core</module>
 		<module>study-ladder-game-executor</module>
+		<module>study-ladder-game-gui</module>
 	</modules>
 
 	<dependencies>
