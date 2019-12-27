@@ -20,7 +20,7 @@ public class DefaultSelector implements LadderAlgorithm {
 				.distinct()
 				.limit(winner)
 				.collect(Collectors.toList());
-		return selectedIndexes.stream().map(idx -> participants.get(idx)).collect(Collectors.toList());
+		return selectedIndexes.stream().map(participants::get).collect(Collectors.toList());
 	}
 
 }

@@ -60,12 +60,7 @@ public class LadderVertical {
 				.stream()
 				.filter(x -> x.getPosition() > min)
 				.min(Comparator.comparing(LadderHorizontal::getPosition));
-		if (next.isPresent()) {
-			return next.get();
-		}
-		else  {
-			return null;
-		}
+        return next.orElse(null);
 	}
 	
 	public LadderVertical getGoalLine() {

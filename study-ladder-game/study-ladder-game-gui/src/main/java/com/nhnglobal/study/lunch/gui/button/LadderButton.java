@@ -21,14 +21,11 @@ public class LadderButton extends JButton {
 		this.startLine = line;
 		this.panel = panel;
 		
-		this.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		this.addActionListener(e -> {
 //				setMarkOnPanel();
-				startLine.getGoalLine();
-				panel.animateMark(startLine.getStopPoints());
-            }
-		});
+            startLine.getGoalLine();
+            panel.animateMark(startLine.getStopPoints());
+});
 	}
 	
 	public LadderVertical getStartLine() {
