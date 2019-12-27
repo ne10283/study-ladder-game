@@ -14,7 +14,7 @@ public class JsonParser implements Parser {
 		GameRequest request = null;
 		try {
 			request = mapper.readValue(jsonString, GameRequest.class);
-		} catch (IOException e) {
+		} catch (IOException ignored) {
 		}
 
 		return request;

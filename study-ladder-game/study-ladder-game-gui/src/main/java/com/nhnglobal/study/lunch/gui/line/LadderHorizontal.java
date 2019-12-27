@@ -27,8 +27,7 @@ public class LadderHorizontal {
 		return points;
 	}
 	
-	public LadderVertical getOtherLine(LadderVertical line)
-	{
+	public LadderVertical getOtherLine(LadderVertical line) {
 		if (line == this.left) return this.right;
 		else return this.left;
 	}

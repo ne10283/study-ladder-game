@@ -7,17 +7,12 @@ import java.util.Optional;
 import com.nhnglobal.study.lunch.core.GhostLegService;
 import com.nhnglobal.study.lunch.core.algorithm.LadderAlgorithm;
 import com.nhnglobal.study.lunch.core.model.GameRequest;
-import com.nhnglobal.study.lunch.core.algorithm.selector.DefaultSelector;
 
 public class GhostLegServiceImpl implements GhostLegService {
 
 	private LadderAlgorithm ladderAlgorithm;
-	
-	public GhostLegServiceImpl() {
-		this.ladderAlgorithm = new DefaultSelector();
-	}
-	
-	public GhostLegServiceImpl(LadderAlgorithm ladderAlgorithm) {
+
+    public GhostLegServiceImpl(LadderAlgorithm ladderAlgorithm) {
 		this.ladderAlgorithm = ladderAlgorithm; 
 	}
 

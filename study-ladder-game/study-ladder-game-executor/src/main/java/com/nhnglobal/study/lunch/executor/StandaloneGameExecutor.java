@@ -32,11 +32,6 @@ public class StandaloneGameExecutor {
 		for(String name : winners) {
 			log.info("congratulation : " + name);
 		}
-		
-		LadderGameGui gui = new LadderGameGui();
-		gui.createFrame();
-		gui.addParticipants(request.getParticipants());
-		gui.startFrame();
 	}
 
 }

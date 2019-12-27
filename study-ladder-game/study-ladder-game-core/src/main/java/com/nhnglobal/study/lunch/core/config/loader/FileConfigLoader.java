@@ -15,11 +15,11 @@ public class FileConfigLoader extends ConfigLoader {
 
 		try (
 			InputStreamReader isr = new InputStreamReader(this.getClass().getResourceAsStream(filePath));
-		    BufferedReader r = new BufferedReader(isr);
-		) {
+		    BufferedReader r = new BufferedReader(isr)
+        ) {
 			
 			StringBuilder jsonString = new StringBuilder();
-			String line = null;
+			String line;
 			while((line = r.readLine()) != null) {
 				jsonString.append(line);
 			}
@@ -28,7 +28,7 @@ public class FileConfigLoader extends ConfigLoader {
 			
 			request = parser.parse(jsonString.toString());
 			
-		} catch (Exception e){
+		} catch (Exception ignored){
 			
 		}
 	}
