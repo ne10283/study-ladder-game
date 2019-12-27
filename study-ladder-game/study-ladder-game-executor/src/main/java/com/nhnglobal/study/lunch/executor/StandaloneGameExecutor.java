@@ -1,17 +1,15 @@
 package com.nhnglobal.study.lunch.executor;
 
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.nhnglobal.study.lunch.core.GhostLegService;
 import com.nhnglobal.study.lunch.core.config.ConfigLoader;
 import com.nhnglobal.study.lunch.core.config.loader.FileConfigLoader;
 import com.nhnglobal.study.lunch.core.config.parser.JsonParser;
 import com.nhnglobal.study.lunch.core.model.GameRequest;
 import com.nhnglobal.study.lunch.executor.factory.GhostLegServiceFactory;
-import com.nhnglobal.study.lunch.gui.LadderGameGui;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 public class StandaloneGameExecutor {
 	
@@ -29,14 +27,8 @@ public class StandaloneGameExecutor {
 		GhostLegService ghostLegService = factory.getService("default");
 		List<String> winners = ghostLegService.bet(request);
 		
-		for(String name : winners) {
+		for (String name : winners) {
 			log.info("congratulation : " + name);
 		}
-		
-		LadderGameGui gui = new LadderGameGui();
-		gui.createFrame();
-		gui.addParticipants(request.getParticipants());
-		gui.startFrame();
 	}
-
 }

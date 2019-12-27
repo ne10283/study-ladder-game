@@ -12,6 +12,7 @@ public class LadderVertical {
 	private int positionY;
 	private List<LadderHorizontal> horizontalLines;
 	private List<LadderPoint> stopPoints;
+	private boolean isWinnerPoint;
 	
 	public LadderVertical(int length, int x, int y) {
 		this.length = length;
@@ -19,8 +20,9 @@ public class LadderVertical {
 		this.positionY = y;
 		this.horizontalLines = new ArrayList<>();
 		this.stopPoints = new ArrayList<>();
+		this.isWinnerPoint = false;
 	}
-	
+
 	public void setLength(int l) {
 		this.length = l;
 	}
@@ -44,6 +46,12 @@ public class LadderVertical {
 	}
 	public List<LadderHorizontal> getHorizontalLines() {
 		return this.horizontalLines;
+	}
+	public boolean getIsWinnerPoint() {
+		return this.isWinnerPoint;
+	}
+	public void setWinnerPoint () {
+		this.isWinnerPoint = true;
 	}
 	
 	public Integer[] getPoints() {

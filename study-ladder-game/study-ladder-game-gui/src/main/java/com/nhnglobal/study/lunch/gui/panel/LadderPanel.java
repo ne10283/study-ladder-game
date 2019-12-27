@@ -32,6 +32,8 @@ public class LadderPanel extends JPanel {
 			Integer[] p = line.getPoints();
 			g.setColor(Color.black);
 			g.drawLine(p[0], p[1], p[2], p[3]);
+			if (line.getIsWinnerPoint())
+				g.drawString("Winner", p[2] - 15, p[3] + 20);
 		}
 		for (LadderHorizontal line : this.horizontalLines) {
 			Integer[] p = line.getPoints();
@@ -51,6 +53,14 @@ public class LadderPanel extends JPanel {
 	
 	public void addHorizontalLine(LadderHorizontal line) {
 		this.horizontalLines.add(line);
+	}
+
+	public void addHorizontalLines(List<LadderHorizontal> lines) {
+		this.horizontalLines.addAll(lines);
+	}
+
+	public List<LadderVertical> getVerticalLines() {
+		return this.verticalLines;
 	}
 	
 	public void animateMark(List<LadderPoint> points) {
